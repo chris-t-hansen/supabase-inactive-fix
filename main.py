@@ -47,6 +47,11 @@ def main():
         if key_env_var:
             key = os.getenv(key_env_var)
 
+        # If using environment variables for url
+        url_env_var = config.get('supabase_url_env')
+        if url_env_var:
+            url = os.getenv(url_env_var)
+
         if not url or not key:
             logging.error(f"Supabase URL or Key missing for '{name}'. Skipping.")
             all_successful = False
