@@ -6,7 +6,7 @@ name: Supabase Keep-Alive
 
 on:
   schedule:
-    # Run at midnight UTC every Monday and Thursday
+    # Run at midnight UTC every Monday, Thursday, and Friday
     - cron: '0 0 * * 1,4,5'
 
   # Allow manual triggering from the Actions tab
