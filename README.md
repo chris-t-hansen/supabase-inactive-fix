@@ -45,7 +45,7 @@ This project helps prevent Supabase projects from pausing due to inactivity by p
     [
       {
         "name": "Database1",
-        "supabase_url": "https://your-supabase-url-1.supabase.co",
+        "supabase_url_env": "SUPABASE_URL_1",
         "supabase_key_env": "SUPABASE_KEY_1",  // Use environment variable for the key
         "table_name": "KeepAlive"
       },
@@ -70,6 +70,7 @@ This project helps prevent Supabase projects from pausing due to inactivity by p
     #### Example:
     
     - `"supabase_key_env": "SUPABASE_KEY_1"`: This tells the script to look for an environment variable called `SUPABASE_KEY_1` that contains the actual API key.
+    - `"supabase_url_env": "SUPABASE_URL_1"`: This tells the script to look for an environment variable called `SUPABASE_URL_1` that contains the actual URL.
     - `"supabase_key": "your-direct-supabase-key"`: This directly provides the API key within the `config.json` file, which is less secure but simpler for local setups.
 
 4. Set up your environment variables _if you're using them_:
@@ -132,6 +133,10 @@ The easiest way to deploy this project is using GitHub Actions, which runs compl
      - Name: `SUPABASE_KEY_1`
      - Value: Your Supabase API key
    - Repeat for all your databases (`SUPABASE_KEY_2`, `SUPABASE_KEY_3`, etc.)
+   - Click **New repository secret**
+     - Name: `SUPABASE_URL_1`
+     - Value: Your Supabase URL (`https://abcxyzzyxcba.supabase.co, etc)
+   - Add secrets for each database (matching the url env var names in your `config.json`):
 
 5. **Enable GitHub Actions**:
    - Go to the **Actions** tab in your forked repository
